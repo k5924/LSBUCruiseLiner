@@ -1,7 +1,7 @@
-## LSBUCruiseLiner Case Study C
+# LSBUCruiseLiner Case Study C
 
-> We are each given a case study where we have to:
-<ol>
+## We are each given a case study where we have to:
+><ol>
 <li>Design an ERD of the system</li>
 <li>Produce a complete set of functional dependencies for the system</li>
 <li>Create the database in a suitable relational database software (MS SQL Server)</li>
@@ -15,6 +15,6 @@
 <li>Record a video demo (10 mins maximum) of the queries and the dashboard where during the video, we must demonstrate live execution of both the queries and the dashboard</li>
 </ol>
 
-# Whats in the repository
+## Whats in the repository
 
 > All scripts and code used when completing the coursework, mainly in TSQL for Microsoft SQL Server Management Studio 18 with Tableau being used as the interface for the dashboard
