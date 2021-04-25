@@ -31,6 +31,12 @@
           <AssociatedConnUserName />
           <FullPath>InsertIntoDB.sql</FullPath>
         </FileNode>
+        <FileNode Name="NumberOfReservations.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-7118ALUU\SQLEXPRESS:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-7118ALUU\SQLEXPRESS</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>NumberOfReservations.sql</FullPath>
+        </FileNode>
       </Items>
     </LogicalFolder>
     <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
