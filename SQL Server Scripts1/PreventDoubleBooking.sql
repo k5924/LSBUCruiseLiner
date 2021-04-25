@@ -20,7 +20,7 @@ BEGIN
 
 	IF @rowCount = 0
 		BEGIN
-			PRINT 'Cabin number: ' + CONVERT(Char(12), @CabinNumber) + ' on Voyage number: ' + CONVERT(Char(12),@VoyageNumber) + ' doesnt exist'
+			PRINT 'Cabin number: ' + CONVERT(Char(12), @CabinNumber) + ' on Voyage number: ' + CONVERT(Char(12),@VoyageNumber) + ' doesnt exist in the cabins table'
 			RETURN;
 		END;
 
@@ -42,4 +42,4 @@ BEGIN
 	END;
 END;
 
-EXEC Check_Availability @VoyageNumber=1, @CabinNumber=112;
+EXEC Check_Availability @VoyageNumber=1, @CabinNumber=200;
