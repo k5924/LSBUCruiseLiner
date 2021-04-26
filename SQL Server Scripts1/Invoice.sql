@@ -73,29 +73,30 @@ BEGIN
 		PRINT 'Address: '+CONVERT(Char(100),@deliveryAddress)
 		PRINT 'Zipcode: '+CONVERT(Char(10),@zipcode)
 		PRINT ''
-		PRINT 'Price of Reservation: £'+CONVERT(Char(10),@reservationPrice)
+		PRINT 'Price of Reservation: '+CONVERT(Char(10),FORMAT(@reservationPrice, 'C2', 'gb-GB'))
 		PRINT ''
 		PRINT 'Cabin type: '+CONVERT(Char(255),@cabinType)
-		PRINT 'Cabin Costs £'+CONVERT(Char(6),@cabinPrice)
+		PRINT 'Cabin Costs '+CONVERT(Char(6),FORMAT(@cabinPrice, 'C2', 'gb-GB'))
 		PRINT ''
 		PRINT 'Meal Chosen: '+CONVERT(Char(100),@meal)
-		PRINT 'Meal Costs £'+CONVERT(Char(5),@mealPrice)
+		PRINT 'Meal Costs '+CONVERT(Char(5),FORMAT(@mealPrice, 'C2', 'gb-GB'))
 		PRINT ''
 		PRINT 'Activities: '
 		OPEN activityCursor;
 		FETCH NEXT FROM activityCursor into @activityType, @activityPrice
 		WHILE @@FETCH_STATUS = 0
 			BEGIN
-				PRINT @activityType+' costs £'+CONVERT(Char(5),@activityPrice)
+				PRINT @activityType+' costs '+CONVERT(Char(5),FORMAT(@activityPrice, 'C2', 'gb-GB'))
 				FETCH NEXT FROM activityCursor into @activityType, @activityPrice
 			END;
 		CLOSE activityCursor;
 		DEALLOCATE activityCursor;
-		PRINT 'Total cost of Activities: £'+CONVERT(Char(6),@totalActivityPrice)
+		PRINT 'Total cost of Activities: '+CONVERT(Char(6),FORMAT(@totalActivityPrice, 'C2', 'gb-GB'))
 		PRINT ''
-		PRINT'Total Price Before VAT: £'+CONVERT(Char(12),@beforeVAT)
+		PRINT'Total Price Before VAT: '+CONVERT(Char(12),FORMAT(@beforeVAT, 'C2', 'gb-GB'))
 		PRINT''
-		PRINT'Total Price After VAT(+20%): £'+CONVERT(Char(12),@beforeVAT*1.2)
+		;
+		PRINT'Total Price After VAT(+20%): '+CONVERT(Char(12),FORMAT((@beforeVAT*1.2), 'C2', 'gb-GB'))
 		RETURN;
 	END;
 	
