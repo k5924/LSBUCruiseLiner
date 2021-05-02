@@ -42,4 +42,4 @@ BEGIN
 	END;
 END;
 
-EXEC Check_Availability @VoyageNumber=1, @CabinNumber=200;
+EXEC Check_Availability @VoyageNumber=4, @CabinNumber=136;
