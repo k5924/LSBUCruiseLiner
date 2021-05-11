@@ -34,7 +34,11 @@ BEGIN
 
 	IF @rowCount = 0
 		BEGIN
+			PRINT '###################################################################################'
+			PRINT '-----------------------------LSBU Cruise Liner Invoice-----------------------------'
+			PRINT '###################################################################################'
 			PRINT'That customer either doesnt exist or has no reservations listed'
+			PRINT '-----------------------------------------------------------------------------------'
 			RETURN;
 		END;
 	BEGIN
@@ -68,19 +72,21 @@ BEGIN
 		WHERE TicketID = @ticketID AND ActivityType = Activities.[Type];
 
 		SELECT @beforeVAT = @cabinPrice + @mealPrice + @reservationPrice + @totalActivityPrice;
-
+		PRINT '###################################################################################'
+		PRINT '-----------------------------LSBU Cruise Liner Invoice-----------------------------'
+		PRINT '###################################################################################'
 		PRINT 'Firstname: '+CONVERT(Char(25),@firstName)+' Lastname: '+CONVERT(Char(25),@lastName)
 		PRINT 'Address: '+CONVERT(Char(100),@deliveryAddress)
 		PRINT 'Zipcode: '+CONVERT(Char(10),@zipcode)
-		PRINT ''
+		PRINT '-----------------------------------------------------------------------------------'
 		PRINT 'Price of Reservation: '+CONVERT(Char(10),FORMAT(@reservationPrice, 'C2', 'gb-GB'))
-		PRINT ''
+		PRINT '-----------------------------------------------------------------------------------'
 		PRINT 'Cabin type: '+CONVERT(Char(255),@cabinType)
 		PRINT 'Cabin Costs '+CONVERT(Char(6),FORMAT(@cabinPrice, 'C2', 'gb-GB'))
-		PRINT ''
+		PRINT '-----------------------------------------------------------------------------------'
 		PRINT 'Meal Chosen: '+CONVERT(Char(100),@meal)
 		PRINT 'Meal Costs '+CONVERT(Char(5),FORMAT(@mealPrice, 'C2', 'gb-GB'))
-		PRINT ''
+		PRINT '-----------------------------------------------------------------------------------'
 		PRINT 'Activities: '
 		OPEN activityCursor;
 		FETCH NEXT FROM activityCursor into @activityType, @activityPrice
@@ -92,11 +98,11 @@ BEGIN
 		CLOSE activityCursor;
 		DEALLOCATE activityCursor;
 		PRINT 'Total cost of Activities: '+CONVERT(Char(6),FORMAT(@totalActivityPrice, 'C2', 'gb-GB'))
-		PRINT ''
+		PRINT '-----------------------------------------------------------------------------------'
 		PRINT'Total Price Before VAT: '+CONVERT(Char(12),FORMAT(@beforeVAT, 'C2', 'gb-GB'))
-		PRINT''
-		;
+		PRINT '-----------------------------------------------------------------------------------'
 		PRINT'Total Price After VAT(+20%): '+CONVERT(Char(12),FORMAT((@beforeVAT*1.2), 'C2', 'gb-GB'))
+		PRINT '-----------------------------------------------------------------------------------'
 		RETURN;
 	END;
 	
