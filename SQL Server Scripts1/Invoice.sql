@@ -35,10 +35,8 @@ BEGIN
 	IF @rowCount = 0
 		BEGIN
 			PRINT '###################################################################################'
-			PRINT '-----------------------------LSBU Cruise Liner Invoice-----------------------------'
+			PRINT'          That customer either doesnt exist or has no reservations listed           '
 			PRINT '###################################################################################'
-			PRINT'That customer either doesnt exist or has no reservations listed'
-			PRINT '-----------------------------------------------------------------------------------'
 			RETURN;
 		END;
 	BEGIN
