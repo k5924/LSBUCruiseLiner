@@ -18,3 +18,6 @@
 ## Whats in the repository
 
 > All scripts and code used when completing the coursework, mainly in TSQL for Microsoft SQL Server Management Studio 18 with Tableau being used as the interface for the dashboard
+## Demo
+
+>[![Demonstration Video](https://img.youtube.com/vi/4RkBQu0-cHA/0.jpg)](https://www.youtube.com/watch?v=4RkBQu0-cHA)
